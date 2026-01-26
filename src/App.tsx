@@ -1,14 +1,13 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-
+import { Navbar } from './components/layouts/navbar/navbar'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-     <div>Document Extract POC</div>
+      <Navbar />
+      <main className="text-base text-sub antialiased">
+       <p>Content</p>
+      </main>
     </>
   )
 }

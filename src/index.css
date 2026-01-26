@@ -1,1 +1,64 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@theme {
+  --color-text-dark: #1A1A1A;
+  --color-primary: #1E3240;
+  --color-accent: #ECF1F8;
+  --color-text-title: #212121;
+  --color-text-sub: #676767;
+  --text-title: 64px;
+  --text-body: 18px;
+  --text-smaller: 14px;
+}
+
+@utility flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@utility flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@utility flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@utility flex-end {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+@utility wrapper {
+  max-width: theme(maxWidth.7xl);
+  margin-inline: auto;
+  width: 100%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  ;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 400ms ease-out;
+}
