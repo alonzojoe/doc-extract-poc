@@ -1,15 +1,20 @@
 import { Navbar } from './components/layouts/navbar/navbar'
 import { Wrapper } from './components/container'
+import { FileUpload } from './components/features'
 
 function App() {
+
+  const handleFileSelect = () => {
+    console.log('file')
+  }
 
   return (
     <>
       <Navbar />
-      <main className="text-base text-sub antialiased h-dvh bg-accent">
+      <main className="text-base text-sub antialiased h-dvh bg-white">
         <section id="home" className="pt-28 lg:pt-20">
         <Wrapper className="px-4 py-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
 
               <div className="space-y-6">
                 <div>
@@ -20,6 +25,8 @@ function App() {
                     Upload a document to extract structured data
                   </p>
                 </div>
+
+                <FileUpload onFileSelect={handleFileSelect} />
 
               
               </div>
