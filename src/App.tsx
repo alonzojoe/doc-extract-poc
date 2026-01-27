@@ -6,11 +6,28 @@ function App() {
   return (
     <>
       <Navbar />
-      <main className="text-base text-sub antialiased h-dvh">
-        <section id="home" className="pt-20 lg:pt-32 bg-accent">
-          <Wrapper className='px-3 py-2 grid items-center grid-cols-1 lg:grid-cols-2 gap-8'>
-            <p className='bg-red-500'>Content</p>
-            <p className='bg-green-500'>Content</p>
+      <main className="text-base text-sub antialiased h-dvh bg-accent">
+        <section id="home" className="pt-28 lg:pt-20">
+        <Wrapper className="px-4 py-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+
+              <div className="space-y-6">
+                <div>
+                  <h1 className="text-2xl font-bold text-gray-900 mb-2">
+                    Document Extractor
+                  </h1>
+                  <p className="text-sm text-gray-600">
+                    Upload a document to extract structured data
+                  </p>
+                </div>
+
+              
+              </div>
+
+              <div className="lg:sticky lg:top-24 h-fit">
+                Json viewer here 
+              </div>
+            </div>
           </Wrapper>
         </section>
       </main>
