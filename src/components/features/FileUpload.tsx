@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useRef } from 'react';
 import { Upload, File, X } from 'lucide-react';
 import { cn } from '../../lib/utils';
 
@@ -9,6 +9,7 @@ type FileUploadProps = {
 export const FileUpload = ({ onFileSelect }: FileUploadProps) => {
   const [isDragging, setIsDragging] = useState(false);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleDrag = useCallback((e: React.DragEvent) => {
     e.preventDefault();
@@ -44,6 +45,10 @@ export const FileUpload = ({ onFileSelect }: FileUploadProps) => {
     setSelectedFile(null);
   };
 
+  const triggerFileInput = () => {
+    fileInputRef.current?.click();
+  };
+
   return (
     <div className="space-y-4">
       <div
@@ -59,10 +64,14 @@ export const FileUpload = ({ onFileSelect }: FileUploadProps) => {
         )}
       >
         <div className="flex flex-col items-center gap-3">
-          <div className={cn(
-            "p-4 rounded-full transition-colors",
-            isDragging ? "bg-blue-100" : "bg-gray-100"
-          )}>
+          <div
+            onClick={triggerFileInput}
+            className={cn(
+              "p-4 rounded-full transition-colors cursor-pointer",
+              isDragging ? "bg-blue-100" : "bg-gray-100",
+              "hover:bg-blue-100"
+            )}
+          >
             <Upload className={cn(
               "w-8 h-8 transition-colors",
               isDragging ? "text-blue-600" : "text-gray-500"
@@ -75,6 +84,7 @@ export const FileUpload = ({ onFileSelect }: FileUploadProps) => {
               <label className="text-blue-600 hover:text-blue-700 cursor-pointer underline">
                 browse
                 <input
+                  ref={fileInputRef}
                   type="file"
                   className="hidden"
                   onChange={handleFileInput}
