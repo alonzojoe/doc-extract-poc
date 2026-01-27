@@ -55,9 +55,8 @@ export const JsonViewer = ({ data }: JsonViewerProps) => {
           </pre>
         ) : (
           <div className="flex items-center justify-center h-full text-gray-400">
-            <div className="text-center">
-              <p className="text-sm font-medium mb-1">No data yet</p>
-              <p className="text-xs">Upload a document to see extracted data</p>
+            <div className="text-center py-5">
+              <p className="text-sm font-medium mb-1">Upload a document to see extracted data</p>
             </div>
           </div>
         )}

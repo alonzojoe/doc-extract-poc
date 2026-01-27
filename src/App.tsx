@@ -87,7 +87,7 @@ function App() {
               </div>
 
               <div className="lg:sticky lg:top-24 h-fit">
-                Json viewer here 
+                <JsonViewer data={extractedData}/>
               </div>
             </div>
           </Wrapper>
