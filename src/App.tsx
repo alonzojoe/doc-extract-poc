@@ -1,49 +1,19 @@
-import { useState } from 'react';
 import { Navbar } from './components/layouts/navbar/navbar'
 import { Wrapper } from './components/container'
 import { FileUpload, JsonViewer } from './components/features'
 import { Button } from './components/ui';
 import { Loader2 } from 'lucide-react';
+import { useDocumentExtractor } from './hooks';
 
-const SAMPLE_DATA = {
-        documentType: "Invoice",
-        extractedFields: {
-          invoiceNumber: "INV-2026-001",
-          date: "2026-01-27",
-          total: "$1,234.56",
-          vendor: "Agwanet",
-          items: [
-            { description: "Product A", quantity: 2, price: "$123.40" },
-            { description: "Product B", quantity: 1, price: "$234.56" }
-          ]
-        },
-      }
 
 function App() {
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  const [extractedData, setExtractedData] = useState<object | null>(null);
-  const [isProcessing, setIsProcessing] = useState(false);
-
- const handleFileSelect = (file: File) => {
-    setSelectedFile(file);
-    setExtractedData(null); // Reset extracted data when new file is selected
-  };
-
-  const handleExtract = async () => {
-    if (!selectedFile) return;
-
-    setIsProcessing(true);
-    
-    // Simulating API call
-    setTimeout(() => {
-      // sample data
-      setExtractedData(SAMPLE_DATA);
-      setIsProcessing(false);
-      
-    }, 5000);
-  };
-
-  console.log('extracted', extractedData)
+  const {
+    selectedFile, 
+    extractedData,
+    isProcessing,
+    handleFileSelect,
+    handleExtract,
+  } = useDocumentExtractor()
 
   return (
     <>
