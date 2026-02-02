@@ -4,6 +4,7 @@ import { FileUpload, JsonViewer } from './components/features'
 import { Button } from './components/ui';
 import { Loader2 } from 'lucide-react';
 import { useDocumentExtractor } from './hooks';
+import { Toaster } from 'react-hot-toast';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
 
   return (
     <>
+      <Toaster />
       <Navbar />
       <main className="text-base text-sub antialiased h-dvh bg-white">
         <section id="home" className="pt-28 lg:pt-20">
