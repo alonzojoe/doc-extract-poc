@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import api from '../services/api';
+import toast from 'react-hot-toast';
 
 export const useDocumentExtractor = () => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -33,12 +34,21 @@ export const useDocumentExtractor = () => {
       })
 
       if (res.data.success) {
+        toast.success("Data extracted successfully", {
+          duration: 5000
+        })
         setExtractedData(res.data.data);
       } else {
         console.log('error', error)
+        toast.error("An error occured while extracting data.", {
+          duration: 5000
+        })
         throw new Error('Extraction failed');
       }
     } catch (error) {
+      toast.error("An error occured while extracting data.", {
+        duration: 5000
+      })
       console.error('Error extracting document:', error);
     } finally {
       setIsProcessing(false);
