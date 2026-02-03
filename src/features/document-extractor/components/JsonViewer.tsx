@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { Check, Copy, RotateCcw } from 'lucide-react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { Button } from '../../../components/ui';
+import { Button } from '@/components/ui';
 
 type JsonViewerProps = {
   data: Record<string, unknown> | null;
@@ -72,6 +72,31 @@ export const JsonViewer = ({ data, isProcessing, onReset }: JsonViewerProps) => 
       <div className="min-h-[420px]">
         {isProcessing ? (
           <div className="p-5">
+            <div className="h-4 w-40 bg-gray-200 rounded animate-pulse mb-3" />
+            <div className="h-3 w-72 bg-gray-200 rounded animate-pulse mb-2" />
+            <div className="h-3 w-64 bg-gray-200 rounded animate-pulse mb-2" />
+            <div className="h-3 w-80 bg-gray-200 rounded animate-pulse mb-2" />
+            <div className="h-3 w-56 bg-gray-200 rounded animate-pulse mb-2" />
+            <div className="h-4 w-40 bg-gray-200 rounded animate-pulse mb-3" />
+            <div className="h-3 w-72 bg-gray-200 rounded animate-pulse mb-2" />
+            <div className="h-3 w-64 bg-gray-200 rounded animate-pulse mb-2" />
+            <div className="h-3 w-80 bg-gray-200 rounded animate-pulse mb-2" />
+            <div className="h-3 w-56 bg-gray-200 rounded animate-pulse mb-2" />
+            <div className="h-4 w-40 bg-gray-200 rounded animate-pulse mb-3" />
+            <div className="h-3 w-72 bg-gray-200 rounded animate-pulse mb-2" />
+            <div className="h-3 w-64 bg-gray-200 rounded animate-pulse mb-2" />
+            <div className="h-3 w-80 bg-gray-200 rounded animate-pulse mb-2" />
+            <div className="h-3 w-56 bg-gray-200 rounded animate-pulse mb-2" />
+            <div className="h-4 w-40 bg-gray-200 rounded animate-pulse mb-3" />
+            <div className="h-3 w-72 bg-gray-200 rounded animate-pulse mb-2" />
+            <div className="h-3 w-64 bg-gray-200 rounded animate-pulse mb-2" />
+            <div className="h-3 w-80 bg-gray-200 rounded animate-pulse mb-2" />
+            <div className="h-3 w-56 bg-gray-200 rounded animate-pulse mb-2" />
+            <div className="h-4 w-40 bg-gray-200 rounded animate-pulse mb-3" />
+            <div className="h-3 w-72 bg-gray-200 rounded animate-pulse mb-2" />
+            <div className="h-3 w-64 bg-gray-200 rounded animate-pulse mb-2" />
+            <div className="h-3 w-80 bg-gray-200 rounded animate-pulse mb-2" />
+            <div className="h-3 w-56 bg-gray-200 rounded animate-pulse mb-2" />
             <div className="h-4 w-40 bg-gray-200 rounded animate-pulse mb-3" />
             <div className="h-3 w-72 bg-gray-200 rounded animate-pulse mb-2" />
             <div className="h-3 w-64 bg-gray-200 rounded animate-pulse mb-2" />

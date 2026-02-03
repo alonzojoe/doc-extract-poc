@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useState } from 'react';
 import toast from 'react-hot-toast';
-import api from '../../services/api';
+import api from '@/services/api';
 
 type ExtractedData = Record<string, unknown> | null;
 
@@ -68,7 +68,6 @@ export const useDocumentExtractor = (): UseDocumentExtractorReturn => {
     } catch (err) {
       toast.error('An error occurred while extracting data.', { duration: 5000 });
       setExtractedData(null);
-      // eslint-disable-next-line no-console
       console.error('Error extracting document:', err);
     } finally {
       setIsProcessing(false);

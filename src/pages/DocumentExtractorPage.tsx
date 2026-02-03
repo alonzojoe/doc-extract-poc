@@ -1,8 +1,8 @@
-import { Loader2, RotateCcw, Sparkles } from 'lucide-react';
-import { Button } from '../components/ui';
-import { Wrapper } from '../components/layout';
-import { FileUpload, JsonViewer } from '../features/document-extractor/components';
-import { useDocumentExtractor } from '../features/document-extractor/useDocumentExtractor';
+import { Loader2, RotateCcw } from 'lucide-react';
+import { Button } from '@/components/ui';
+import { Wrapper } from '@/components/layout';
+import { FileUpload, JsonViewer } from '@/features/document-extractor/components';
+import { useDocumentExtractor } from '@/features/document-extractor/useDocumentExtractor';
 
 export const DocumentExtractorPage = () => {
   const {

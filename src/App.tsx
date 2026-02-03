@@ -1,6 +1,6 @@
 import { Toaster } from 'react-hot-toast';
-import { Navbar } from './components/layout';
-import { DocumentExtractorPage } from './pages/DocumentExtractorPage';
+import { Navbar } from '@/components/layout';
+import { DocumentExtractorPage } from '@/pages/DocumentExtractorPage';
 
 function App() {
   return (

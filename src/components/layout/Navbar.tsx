@@ -14,13 +14,6 @@ export const Navbar = () => {
             <p className="text-[11px] text-gray-500">POC</p>
           </div>
         </div>
-
-        <a
-          href="#home"
-          className="text-xs font-semibold text-gray-600 hover:text-gray-900"
-        >
-          Document Extractor
-        </a>
       </Wrapper>
     </nav>
   );
