@@ -1,1 +1,2 @@
-export * from "./use_document_extractor"
+// Back-compat re-export
+export * from '../features/document-extractor/useDocumentExtractor';

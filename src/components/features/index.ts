@@ -1,2 +1,2 @@
-export * from "./FileUpload"
-export * from './JsonViewer'
+// Back-compat re-export
+export * from '../../features/document-extractor/components';
