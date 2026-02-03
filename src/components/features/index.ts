@@ -1,2 +1,1 @@
-export * from "./FileUpload"
-export * from './JsonViewer'
+export * from '../../features/document-extractor/components';

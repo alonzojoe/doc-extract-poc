@@ -1,1 +1,1 @@
-export * from "./use_document_extractor"
+export * from '@/features/document-extractor/useDocumentExtractor';
