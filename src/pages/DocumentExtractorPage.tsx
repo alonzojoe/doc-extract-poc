@@ -22,10 +22,7 @@ export const DocumentExtractorPage = () => {
       <section id="home" className="pt-10 pb-14">
         <Wrapper className="px-4">
           <div className="mb-8">
-            <div className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white/80 px-3 py-1 text-xs font-semibold text-gray-700 shadow-sm">
-              <Sparkles className="size-4 text-blue-700" />
-              Modern UI refactor
-            </div>
+        
             <h1 className="mt-4 text-2xl sm:text-3xl font-extrabold tracking-tight">
               Document Extractor
             </h1>
