@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { Check, Copy, RotateCcw } from 'lucide-react';
+import { Check, Copy, RotateCcw, Trash } from 'lucide-react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { Button } from '@/components/ui';
@@ -41,8 +41,8 @@ export const JsonViewer = ({ data, isProcessing, onReset }: JsonViewerProps) => 
               className="rounded-xl"
               title="Reset results"
             >
-              <RotateCcw className="size-4" />
-              Reset
+              <Trash className="size-4" />
+              Clear
             </Button>
           )}
 

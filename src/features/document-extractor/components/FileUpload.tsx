@@ -64,7 +64,7 @@ export const FileUpload = ({
           type="button"
           onClick={triggerFileInput}
           className={cn(
-            'grid place-items-center size-14 rounded-2xl transition-colors',
+            'grid place-items-center size-14 rounded-2xl transition-colors animate-bounce',
             isDragging ? 'bg-blue-100 text-blue-700' : 'bg-gray-100 text-gray-700',
             'hover:bg-blue-100 hover:text-blue-700',
           )}
