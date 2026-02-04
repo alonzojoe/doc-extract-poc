@@ -58,7 +58,7 @@ export const DocumentExtractorPage = () => {
                   selectedFile={selectedFile}
                   onFileSelect={handleFileSelect}
                   onClear={clearSelectedFile}
-                  accept=".pdf"
+                  accept=".pdf,.jpg,.jpeg,.png,.webp"
                 />
 
                 <div className="mt-5 flex flex-col gap-2">
@@ -87,8 +87,8 @@ export const DocumentExtractorPage = () => {
               <div className="rounded-3xl border border-gray-200 bg-white/70 p-5">
                 <h3 className="text-sm font-bold">Notes</h3>
                 <ul className="mt-2 text-xs text-gray-600 space-y-1 list-disc pl-5">
-                  <li>Only PDF is enabled for now.</li>
-                  <li>Click “Reset” in Results to clear output without losing the file.</li>
+                  <li>Supports PDF and image files (JPG, PNG, WEBP).</li>
+                  <li>Click "Reset" in Results to clear output without losing the file.</li>
                 </ul>
               </div>
             </div>

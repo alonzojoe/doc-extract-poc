@@ -1,5 +1,5 @@
 import { useCallback, useRef, useState } from 'react';
-import { FileText, Upload, X } from 'lucide-react';
+import { FileText, Upload, X, Image } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 type FileUploadProps = {
@@ -13,7 +13,7 @@ export const FileUpload = ({
   selectedFile,
   onFileSelect,
   onClear,
-  accept = '.pdf',
+  accept = '.pdf,.jpg,.jpeg,.png,.webp',
 }: FileUploadProps) => {
   const [isDragging, setIsDragging] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -43,6 +43,9 @@ export const FileUpload = ({
   };
 
   const triggerFileInput = () => fileInputRef.current?.click();
+
+  const isImage = selectedFile && selectedFile.type.startsWith('image/');
+  const isPDF = selectedFile && selectedFile.type === 'application/pdf';
 
   return (
     <div className="space-y-4">
@@ -78,7 +81,9 @@ export const FileUpload = ({
             Drop your document here, or{' '}
             <span className="text-blue-700 underline underline-offset-4">browse</span>
           </p>
-          <p className="mt-1 text-xs text-gray-500">Supports PDF files.</p>
+          <p className="mt-1 text-xs text-gray-500">
+            Supports PDF and images (JPG, PNG, WEBP)
+          </p>
 
           <input
             ref={fileInputRef}
@@ -94,12 +99,24 @@ export const FileUpload = ({
         <div className="rounded-2xl border border-gray-200 bg-white/80 p-4">
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-3 min-w-0">
-              <div className="grid place-items-center size-10 rounded-xl bg-blue-50 text-blue-700">
-                <FileText className="size-5" />
+              <div className={cn(
+                "grid place-items-center size-10 rounded-xl",
+                isImage ? "bg-purple-50 text-purple-700" : "bg-blue-50 text-blue-700"
+              )}>
+                {isImage ? <Image className="size-5" /> : <FileText className="size-5" />}
               </div>
               <div className="min-w-0">
                 <p className="text-sm font-semibold text-gray-900 truncate">{selectedFile.name}</p>
-                <p className="text-xs text-gray-500">{(selectedFile.size / 1024).toFixed(2)} KB</p>
+                <div className="flex items-center gap-2 text-xs text-gray-500">
+                  <span>{(selectedFile.size / 1024).toFixed(2)} KB</span>
+                  <span>•</span>
+                  <span className={cn(
+                    "font-medium",
+                    isImage ? "text-purple-600" : "text-blue-600"
+                  )}>
+                    {isPDF ? 'PDF' : isImage ? 'Image' : 'File'}
+                  </span>
+                </div>
               </div>
             </div>
 
