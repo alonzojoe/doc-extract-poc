@@ -58,7 +58,7 @@ export const DocumentExtractorPage = () => {
                   selectedFile={selectedFile}
                   onFileSelect={handleFileSelect}
                   onClear={clearSelectedFile}
-                  accept=".pdf"
+                  accept=".pdf,.jpg,.jpeg,.png,.webp"
                 />
 
                 <div className="mt-5 flex flex-col gap-2">
