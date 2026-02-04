@@ -38,7 +38,7 @@ describe('JsonViewer', () => {
 
     render(<JsonViewer data={{ ok: true }} onReset={onReset} />);
 
-    await user.click(screen.getByRole('button', { name: /reset/i }));
+    await user.click(screen.getByRole('button', { name: /clear/i }));
     expect(onReset).toHaveBeenCalledTimes(1);
   });
 
